@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/><style>
+table {border: medium solid #6495ed;border-collapse: collapse;width: 100%;} th{font-family: monospace;border: thin solid #6495ed;padding: 5px;background-color: #D0E3FA;}th{text-align: left;}td{font-family: sans-serif;border: thin solid #6495ed;padding: 5px;text-align: center;}.odd{background:#e8edff;}img{padding:5px; border:solid; border-color: #dddddd #aaaaaa #aaaaaa #dddddd; border-width: 1px 2px 2px 1px; background-color:white;}</style>
+</head>
+<body>
+<table><tr><th colspan="4"><pre><code>select "DistanceFromHome", <br>count(*) as employees,<br>count(*) filter (where "Attrition" in ('Yes')) as attrition_count, <br>round((count(*) filter (where "Attrition" in ('Yes')):: numeric/count(*))*100, 2) as percent_distance<br>from raw.wa<br>group by "DistanceFromHome"<br>order by "percent_distance"<br>--order by "DistanceFromHome";</code></pre></th></tr><tr><th>DistanceFromHome</th><th>employees</th><th>attrition_count</th><th>percent_distance</th></tr><tr class="odd"><td>28</td><td>23</td><td>2</td><td>8,7</td></tr>
+<tr><td>6</td><td>59</td><td>7</td><td>11,86</td></tr>
+<tr class="odd"><td>26</td><td>25</td><td>3</td><td>12</td></tr>
+<tr><td>8</td><td>80</td><td>10</td><td>12,5</td></tr>
+<tr class="odd"><td>1</td><td>208</td><td>26</td><td>12,5</td></tr>
+<tr><td>10</td><td>86</td><td>11</td><td>12,79</td></tr>
+<tr class="odd"><td>7</td><td>84</td><td>11</td><td>13,1</td></tr>
+<tr><td>2</td><td>211</td><td>28</td><td>13,27</td></tr>
+<tr class="odd"><td>19</td><td>22</td><td>3</td><td>13,64</td></tr>
+<tr><td>11</td><td>29</td><td>4</td><td>13,79</td></tr>
+<tr class="odd"><td>4</td><td>64</td><td>9</td><td>14,06</td></tr>
+<tr><td>18</td><td>26</td><td>4</td><td>15,38</td></tr>
+<tr class="odd"><td>5</td><td>65</td><td>10</td><td>15,38</td></tr>
+<tr><td>20</td><td>25</td><td>4</td><td>16</td></tr>
+<tr class="odd"><td>3</td><td>84</td><td>14</td><td>16,67</td></tr>
+<tr><td>21</td><td>18</td><td>3</td><td>16,67</td></tr>
+<tr class="odd"><td>29</td><td>27</td><td>5</td><td>18,52</td></tr>
+<tr><td>23</td><td>27</td><td>5</td><td>18,52</td></tr>
+<tr class="odd"><td>14</td><td>21</td><td>4</td><td>19,05</td></tr>
+<tr><td>15</td><td>26</td><td>5</td><td>19,23</td></tr>
+<tr class="odd"><td>9</td><td>85</td><td>18</td><td>21,18</td></tr>
+<tr><td>16</td><td>32</td><td>7</td><td>21,88</td></tr>
+<tr class="odd"><td>25</td><td>25</td><td>6</td><td>24</td></tr>
+<tr><td>17</td><td>20</td><td>5</td><td>25</td></tr>
+<tr class="odd"><td>27</td><td>12</td><td>3</td><td>25</td></tr>
+<tr><td>12</td><td>20</td><td>6</td><td>30</td></tr>
+<tr class="odd"><td>22</td><td>19</td><td>6</td><td>31,58</td></tr>
+<tr><td>13</td><td>19</td><td>6</td><td>31,58</td></tr>
+<tr class="odd"><td>24</td><td>28</td><td>12</td><td>42,86</td></tr>
+</table></body></html>
